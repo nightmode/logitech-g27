@@ -77,7 +77,7 @@ g.connect(options, function(err) {
 The following options can be set when using `connect(options, callback)`.
 
 |Option|Default|Type|Examples|
-|:-|:-|:-|:-|
+|:--|:--|:--|:--|
 |autocenter|true|boolean or array|true, false, [0.3, 0.7]|
 |debug|false|boolean|true, false|
 |range|900|number|270, 900|
@@ -113,7 +113,7 @@ Let's go over each event in detail.
 **Wheel Events**
 
 |Event|Returns|Values|Notes|
-|:-|:-|:-|:-|
+|:--|:--|:--|:--|
 |`wheel-turn`|number|0 - 100|0 is full right<br>50 is centered<br>100 is full left|
 |`wheel-shift_left`|binary|0, 1||
 |`wheel-shift_right`|binary|0, 1||
@@ -127,7 +127,7 @@ Wondering where `wheel-button_2` and `wheel-button_3` are? Their data is mixed i
 **Shifter Events**
 
 |Event|Returns|Values|Notes|
-|:-|:-|:-|:-|
+|:--|:--|:--|:--|
 |`shifter-button_1`|binary|0, 1||
 |`shifter-button_2`|binary|0, 1||
 |`shifter-button_3`|binary|0, 1||
@@ -142,7 +142,7 @@ Wondering where `wheel-button_2` and `wheel-button_3` are? Their data is mixed i
 **Pedal Events**
 
 |Event|Returns|Values|Notes|
-|:-|:-|:-|:-|
+|:--|:--|:--|:--|
 |`pedal-gas`|number|0 - 100|0 is no pressure and 100 is full.|
 |`pedal-brake`|number|0 - 100|0 is no pressure and 100 is full.|
 |`pedal-clutch`|number|0 - 100|0 is no pressure and 100 is full.|
@@ -186,10 +186,10 @@ g.once('pedals-gas', function(val) {
 `forceConstant(num)` where num is 0 - 1 to indicate both direction and strength.
 
 ```js
-forceConstant()    // no force
-forceConstant(0)   // full left
-forceConstant(0.5) // no force
-forceConstant(1)   // full right
+g.forceConstant()    // no force
+g.forceConstant(0)   // full left
+g.forceConstant(0.5) // no force
+g.forceConstant(1)   // full right
 ```
 
 ### forceFriction
@@ -197,10 +197,10 @@ forceConstant(1)   // full right
 `forceFriction(num)` where num is 0 - 1 to indicate effect strength.
 
 ```js
-forceFriction()    // no friction
-forceFriction(0)   // no friction
-forceFriction(0.5) // half strength
-forceFriction(1)   // full strength
+g.forceFriction()    // no friction
+g.forceFriction(0)   // no friction
+g.forceFriction(0.5) // half strength
+g.forceFriction(1)   // full strength
 ```
 
 ### forceOff
