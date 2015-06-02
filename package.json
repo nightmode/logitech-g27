@@ -14,5 +14,11 @@
   "main": "./index.js",
   "dependencies": {
     "node-hid": ">=0.4.0"
-  }
+  },
+  "keywords", [
+    "logitech",
+    "g27",
+    "racing wheel",
+    "hid"
+  ]
 }
