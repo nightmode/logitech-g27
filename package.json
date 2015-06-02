@@ -1,7 +1,7 @@
 {
   "name": "logitech-g27",
-  "version": "0.1.2",
-  "description": "Logitech G27 Racing Wheel for Node.js",
+  "version": "0.1.3",
+  "description": "Logitech G27 Racing Wheel for Node",
   "author": {
     "name": "Daniel Gagan",
     "url": "https://forestmist.org"

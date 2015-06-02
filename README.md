@@ -1,4 +1,4 @@
-# Logitech G27 Racing Wheel for Node.js
+# Logitech G27 Racing Wheel for Node
 
 Bring your Logitech G27 Racing Wheel into the wonderful world of Node and...
 
