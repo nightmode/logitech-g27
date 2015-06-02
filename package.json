@@ -1,6 +1,6 @@
 {
   "name": "logitech-g27",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Logitech G27 Racing Wheel for Node.js",
   "author": {
     "name": "Daniel Gagan",
@@ -15,7 +15,7 @@
   "dependencies": {
     "node-hid": ">=0.4.0"
   },
-  "keywords", [
+  "keywords": [
     "logitech",
     "g27",
     "racing wheel",
