@@ -234,7 +234,7 @@ function userOptions(opt) {
 function leds(setting) {
     /*
     Usage
-    
+
         // no setting
         leds()
 
@@ -251,7 +251,7 @@ function leds(setting) {
         leds([0,0,0,1,1]) // orange and red
 
     */
-    
+
     // no setting
     if (typeof setting === 'undefined') {
         setting = []
@@ -320,10 +320,14 @@ function leds(setting) {
 
         */
 
-        device.write([0xf8, 0x12, setting, 0x00, 0x00, 0x00, 0x01])
+        try {
+            device.write([0xf8, 0x12, setting, 0x00, 0x00, 0x00, 0x01])
 
-        // update global variable for next time
-        ledPrev = setting
+            // update global variable for next time
+            ledPrev = setting
+        } catch(err) {
+            // do nothing
+        }
     }
 } // leds
 
