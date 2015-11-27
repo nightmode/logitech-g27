@@ -968,6 +968,7 @@ function listen(ready, callback) {
         memoryPrev = memory
         dataPrev = data
     })
+    
     device.on("error", function(err) {
         if (options.debug) {
             console.log('device error -> ', JSON.stringify(err), err)
