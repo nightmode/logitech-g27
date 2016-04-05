@@ -1,6 +1,6 @@
 {
   "name": "logitech-g27",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "description": "Logitech G27 Racing Wheel for Node",
   "license": "MIT",
   "author": "Daniel Gagan",
