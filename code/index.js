@@ -152,7 +152,8 @@ function findWheel() {
     var devicePath = ''
 
     for (var i in devices) {
-        if (devices[i].product === 'G27 Racing Wheel') {
+        if (devices[i].product === 'G27 Racing Wheel' ||
+           (devices[i].vendorId === 1133 && devices[i].productId === 49819)) {
             devicePath = devices[i].path
             break
         }
