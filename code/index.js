@@ -152,8 +152,11 @@ function findWheel() {
     var devicePath = ''
 
     for (var i in devices) {
-        if (devices[i].product === 'G27 Racing Wheel' ||
-           (devices[i].vendorId === 1133 && devices[i].productId === 49819)) {
+        // devices[i].product will be set to 'G27 Racing Wheel' on Windows and Mac. Linux will not have this key.
+        // devices[i].interface should be 0 on Windows and Linux.
+        // devices[i].usagePage should be 1 on Windows and Mac.
+        if (devices[i].vendorId === 1133 && devices[i].productId === 49819 &&
+        (devices[i].interface === 0 || devices[i].usagePage === 1)) {
             devicePath = devices[i].path
             break
         }
