@@ -11,6 +11,7 @@ var dataMap = require('./data-map')
 var chalk = require('chalk')
 var events = require('events')
 var hid = require('node-hid')
+var os = require('os')
 
 //-----------
 // Variables
@@ -53,6 +54,15 @@ var options = {
     'autocenter': true,
     'debug': false,
     'range': 900
+}
+var platform = os.platform()
+var prependWrite = false
+
+//-------------
+// OS Specific
+//-------------
+if (platform === 'win32' || platform === 'win64') {
+    prependWrite = true
 }
 
 //-----------
@@ -119,8 +129,8 @@ function connect(odo, callback) { // Constable Odo takes many forms.
 
                 try {
                     // G27 Racing Wheel init from https://www.lfs.net/forum/post/1587144#post1587144
-                    device.write([0xf8, 0x0a, 0x00, 0x00, 0x00, 0x00, 0x00])
-                    device.write([0xf8, 0x09, 0x04, 0x01, 0x00, 0x00, 0x00])
+                    relayOS([0xf8, 0x0a, 0x00, 0x00, 0x00, 0x00, 0x00])
+                    relayOS([0xf8, 0x09, 0x04, 0x01, 0x00, 0x00, 0x00])
 
                     // wait for wheel to finish calibrating
                     setTimeout(function() {
@@ -192,6 +202,18 @@ function relay(data) {
     }
 } // relay
 
+function relayOS(data) {
+    /*
+    Relay low level commands directly to the hardware after applying OS specific tweaks, if needed.
+    @param  {Object}  data  Array of data to write. For example: [0xf8, 0x12, 0x1f, 0x00, 0x00, 0x00, 0x01]
+    */
+    if (prependWrite) {
+        data.unshift(0x00)
+    }
+
+    device.write(data)
+}
+
 function setRange() {
     /*
     Set wheel range.
@@ -207,7 +229,7 @@ function setRange() {
     var range1 = options.range & 0x00ff
     var range2 = (options.range & 0xff00) >> 8
 
-    device.write([0xf8, 0x81, range1, range2, 0x00, 0x00, 0x00])
+    relayOS([0xf8, 0x81, range1, range2, 0x00, 0x00, 0x00])
 } // setRange
 
 function userOptions(opt) {
@@ -305,7 +327,7 @@ function leds(setting) {
         */
 
         try {
-            device.write([0xf8, 0x12, setting, 0x00, 0x00, 0x00, 0x01])
+            relayOS([0xf8, 0x12, setting, 0x00, 0x00, 0x00, 0x01])
 
             // update global variable for next time
             ledPrev = setting
@@ -326,7 +348,7 @@ function autoCenter() {
 
     if (option) {
         // auto-center on
-        device.write([0x14, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00])
+        relayOS([0x14, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00])
 
         if (Array.isArray(option) && option.length === 2) {
             // custom auto-center
@@ -337,14 +359,14 @@ function autoCenter() {
             // byte 5 is the rate the effect strength rises as the wheel turns, 0x00 to 0xff
             option[1] = Math.round(option[1] * 255)
 
-            device.write([0xfe, 0x0d, option[0], option[0], option[1], 0x00, 0x00, 0x00])
+            relayOS([0xfe, 0x0d, option[0], option[0], option[1], 0x00, 0x00, 0x00])
         } else {
             // use default strength profile
-            device.write([0xfe, 0x0d, 0x07, 0x07, 0xff, 0x00, 0x00, 0x00])
+            relayOS([0xfe, 0x0d, 0x07, 0x07, 0xff, 0x00, 0x00, 0x00])
         }
     } else {
         // auto-center off
-        device.write([0xf5, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00])
+        relayOS([0xf5, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00])
     }
 } // autoCenter
 
@@ -362,7 +384,7 @@ function forceConstant(number) {
 
     number = Math.round(Math.abs(number - 1) * 255)
 
-    device.write([0x11, 0x00, number, 0x00, 0x00, 0x00, 0x00])
+    relayOS([0x11, 0x00, number, 0x00, 0x00, 0x00, 0x00])
 } // forceConstant
 
 function forceFriction(number) {
@@ -379,7 +401,7 @@ function forceFriction(number) {
 
     number = Math.round(number * 15)
 
-    device.write([0x21, 0x02, number, 0x00, number, 0x00, 0x00])
+    relayOS([0x21, 0x02, number, 0x00, number, 0x00, 0x00])
 } // forceFriction
 
 function forceOff(slot) {
@@ -398,7 +420,7 @@ function forceOff(slot) {
     }
 
     // turn off effects (except for auto-center)
-    device.write([slot, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00])
+    relayOS([slot, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00])
 } // forceOff
 
 //------------------
