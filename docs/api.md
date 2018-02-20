@@ -15,6 +15,7 @@
 * [advanced](#advanced)
   * [emitter](#emitter)
   * [relay](#relay)
+  * [relayOS](#relayos)
 
 ## connect
 
@@ -104,9 +105,9 @@ g.on('wheel-turn', function(val) {
 
 |Event|Returns|Values|Notes|
 |:--|:--|:--|:--|
-|`pedals-gas`|number|0 - 100|0 is no pressure and 100 is fully pressed.|
-|`pedals-brake`|number|0 - 100|0 is no pressure and 100 is fully pressed.|
-|`pedals-clutch`|number|0 - 100|0 is no pressure and 100 is fully pressed.|
+|`pedals-gas`|number|0 - 1|0 is no pressure, 0.25 is quarter pressure, and 1 is fully pressed.|
+|`pedals-brake`|number|0 - 1|0 is no pressure, 0.25 is quarter pressure, and 1 is fully pressed.|
+|`pedals-clutch`|number|0 - 1|0 is no pressure, 0.25 is quarter pressure, and 1 is fully pressed.|
 
 Not enough events for you? Try subscribing to `all`, `changes`, or `data` for even more information.
 
@@ -230,6 +231,17 @@ Relay low level commands directly to the hardware.
 ```js
 // turn on all LEDs
 g.relay([0xf8, 0x12, 0x1f, 0x00, 0x00, 0x00, 0x01])
+```
+
+### relayOS
+
+`relayOS(data)`
+
+Relay low level commands directly to the hardware after applying OS specific tweaks, if needed.
+
+```js
+// turn on all LEDs
+g.relayOS([0xf8, 0x12, 0x1f, 0x00, 0x00, 0x00, 0x01])
 ```
 
 ## License
