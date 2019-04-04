@@ -113,7 +113,7 @@ Not enough events for you? Try subscribing to `all`, `changes`, or `data` for ev
 
 ### event map
 
-[![Event Map](https://raw.github.com/ForestMist/logitech-g27/master/images/event-map.png)](https://raw.github.com/ForestMist/logitech-g27/master/images/event-map.png)
+[![Event Map](https://raw.github.com/kai-nightmode/logitech-g27/master/images/event-map.png)](https://raw.github.com/kai-nightmode/logitech-g27/master/images/event-map.png)
 
 ### on
 
@@ -246,4 +246,4 @@ g.relayOS([0xf8, 0x12, 0x1f, 0x00, 0x00, 0x00, 0x01])
 
 ## License
 
-MIT © [Daniel Gagan](https://forestmist.org)
+MIT © [Kai Nightmode](https://forestmist.org)

@@ -1,17 +1,17 @@
 {
   "name": "logitech-g27",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Logitech G27 Racing Wheel for Node",
   "license": "MIT",
-  "author": "Daniel Gagan",
+  "author": "Kai Nightmode",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ForestMist/logitech-g27.git"
+    "url": "git://github.com/kai-nightmode/logitech-g27.git"
   },
   "main": "./code/index.js",
   "dependencies": {
-    "chalk": "2.4.1",
-    "node-hid": "0.7.4"
+    "chalk": "2.4.2",
+    "node-hid": "0.7.7"
   },
   "engines": {
     "node": ">=4.0.0"

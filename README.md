@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/ForestMist/logitech-g27/master/images/header.png" width="888" alt="">
+<img src="https://raw.githubusercontent.com/kai-nightmode/logitech-g27/master/images/header.png" width="888" alt="">
 
 # Logitech G27 Racing Wheel for Node
 
@@ -66,8 +66,7 @@ Vroom vroom sounds optional but encouraged. ^\_^
 
 Looking to contribute? Here are some ideas to get you started.
 
-* [Report any issues](https://github.com/ForestMist/logitech-g27/issues) on GitHub.
-* Contact [Daniel](https://forestmist.org/about/) with improvement ideas and/or send a [pull request](https://github.com/ForestMist/logitech-g27/pulls).
+* [Report any issues](https://github.com/kai-nightmode/logitech-g27/issues) on GitHub.
 * Hook up your G27 wheel to something on the internet and wow the IoT community.
 * Share this library with other Logitech loving folks.
 
@@ -75,4 +74,4 @@ Not sure where you can help? Don't worry. Just by using this library, you are ma
 
 ## License
 
-MIT © [Daniel Gagan](https://forestmist.org)
+MIT © [Kai Nightmode](https://forestmist.org)
