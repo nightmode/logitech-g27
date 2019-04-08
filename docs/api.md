@@ -113,7 +113,7 @@ Not enough events for you? Try subscribing to `all`, `changes`, or `data` for ev
 
 ### event map
 
-[![Event Map](https://raw.github.com/kai-nightmode/logitech-g27/master/images/event-map.png)](https://raw.github.com/kai-nightmode/logitech-g27/master/images/event-map.png)
+[![Event Map](https://raw.github.com/nightmode/logitech-g27/master/images/event-map.png)](https://raw.github.com/nightmode/logitech-g27/master/images/event-map.png)
 
 ### on
 
