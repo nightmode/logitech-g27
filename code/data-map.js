@@ -122,7 +122,7 @@ function dataMap(dataDiffPositions, data, memory) {
     @param   {Object}  memory             Memory object to modify.
     @return  {Object}  memory             Modified memory object.
     */
-    for (var i in dataDiffPositions) {
+    for (let i in dataDiffPositions) {
         switch (dataDiffPositions[i]) {
             case 0:
                 memory = shifterBlackButtons(data, memory)
@@ -168,7 +168,7 @@ function reduceNumberFromTo(num, to) {
     */
     to = to * 2
 
-    var y = 128
+    let y = 128
 
     while (y > 1) {
         if (num < to) {
@@ -216,7 +216,7 @@ function round(num, exp) {
 // Functions: Wheel
 //------------------
 function wheelButtonsLeft(data, memory) {
-    var d = data[3]
+    const d = data[3]
 
     memory.wheel.button_2 = d & 1
     memory.wheel.button_3 = (d & 2) ? 1 : 0
@@ -225,7 +225,7 @@ function wheelButtonsLeft(data, memory) {
 } // wheelButtonsRight
 
 function wheelButtonsRight(data, memory) {
-    var d = data[2]
+    const d = data[2]
 
     memory.wheel.button_6 = (d & 128) ? 1 : 0
     memory.wheel.button_5 = (d & 64) ? 1 : 0
@@ -234,7 +234,7 @@ function wheelButtonsRight(data, memory) {
 } // wheelButtonsRight
 
 function wheelButtonsTop(data, memory) {
-    var d = data[1]
+    const d = data[1]
 
     memory.wheel.button_1 = (d & 8) ? 1 : 0
     memory.wheel.button_4 = (d & 4) ? 1 : 0
@@ -243,7 +243,7 @@ function wheelButtonsTop(data, memory) {
 } // wheelButtonsTop
 
 function wheelShiftPedals(data, memory) {
-    var d = data[1]
+    const d = data[1]
 
     memory.wheel.shift_right = d & 1
     memory.wheel.shift_left = (d & 2) ? 1 : 0
@@ -252,8 +252,8 @@ function wheelShiftPedals(data, memory) {
 } // wheelShiftPedals
 
 function wheelTurn(data, memory) {
-    var wheelCourse = data[4] // 0-255
-    var wheelFine = data[3] // 0-252
+    let wheelCourse = data[4] // 0-255
+    let wheelFine = data[3] // 0-252
 
     if (wheelFine & 1) {
         wheelFine -= 1
@@ -266,7 +266,7 @@ function wheelTurn(data, memory) {
     wheelCourse = wheelCourse / 255 * 99 // 99 instead of 100 so wheelCourse and wheelFine add up to 100% when they are both maxed out
     wheelFine = wheelFine / 252
 
-    var wheel = round(wheelCourse + wheelFine, 2)
+    let wheel = round(wheelCourse + wheelFine, 2)
 
     if (wheel > 100) wheel = 100
 
@@ -309,7 +309,7 @@ function pedalToPercent(num) {
 // Functions: Shifter
 //--------------------
 function shifterBlackButtons(data, memory) {
-    var d = data[0]
+    const d = data[0]
 
     memory.shifter.button_1 = (d & 128) ? 1 : 0
     memory.shifter.button_2 = (d & 64) ? 1 : 0
@@ -320,7 +320,7 @@ function shifterBlackButtons(data, memory) {
 } // shifterBlackButtons
 
 function shifterDpad(data, memory) {
-    var dpad = reduceNumberFromTo(data[0], 8)
+    const dpad = reduceNumberFromTo(data[0], 8)
 
     switch (dpad) {
         case 8:
@@ -364,14 +364,14 @@ function shifterDpad(data, memory) {
 } // shifterDpad
 
 function shifterGear(data, memory) {
-    var reverse = data[10]
+    const reverse = data[10]
 
     if (reverse & 1) {
         memory.shifter.gear = -1
         return memory
     }
 
-    var stick = data[2]
+    let stick = data[2]
     stick = reduceNumberFromTo(stick, 32)
 
     switch (stick) {
@@ -408,7 +408,7 @@ function shifterGear(data, memory) {
 } // shifterGear
 
 function shifterRedButtons(data, memory) {
-    var d = data[1]
+    const d = data[1]
 
     memory.shifter.button_5 = (d & 128) ? 1 : 0
     memory.shifter.button_8 = (d & 64) ? 1 : 0
