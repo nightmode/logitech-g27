@@ -15,7 +15,7 @@ Bring your [Logitech G27 Racing Wheel](http://support.logitech.com/en_us/product
 
 ## Install
 
-This library uses [node-hid](https://github.com/node-hid/node-hid) behind the scenes. Node 4 users should have an effortless install. Node 5 users may want to consult node-hid's [compiling from source](https://github.com/node-hid/node-hid#compiling-from-source) guide for anything more serious than a warning.
+This library uses [node-hid](https://github.com/node-hid/node-hid) behind the scenes. Depending on your OS and Node version, you may have an effortless install. If not, you may want to consult node-hid's [compiling from source](https://github.com/node-hid/node-hid#compiling-from-source) guide for assistance.
 
 ```
 npm install logitech-g27
@@ -62,16 +62,15 @@ Vroom vroom sounds optional but encouraged. ^\_^
   * [relay](docs/api.md#relay)
   * [relayOS](docs/api.md#relayos)
 
-## Contribute
+## Support
 
-Looking to contribute? Here are some ideas to get you started.
+Help [support this project](https://www.patreon.com/nightmode) on Patreon. Help me caretake and craft new software, videos, and interactive art. All for as little as $1 a month.
+
+In addition to Patreon, here are some other ways you can help this project.
 
 * [Report any issues](https://github.com/nightmode/logitech-g27/issues) on GitHub.
-* Hook up your G27 wheel to something on the internet and wow the IoT community.
-* Share this library with other Logitech loving folks.
-
-Not sure where you can help? Don't worry. Just by using this library, you are making the world a neater place. ^\_^
+* Share your G27 wheel creation on social media to inspire others.
 
 ## License
 
-MIT © [Kai Nightmode](https://forestmist.org)
+MIT © [Kai Nightmode](https://twitter.com/kai_nightmode)
