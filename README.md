@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/nightmode/logitech-g27/master/images/header.png" width="888" alt="">
+<img src="https://raw.githubusercontent.com/nightmode/logitech-g27/main/images/header.png" width="830" alt="">
 
 # Logitech G27 Racing Wheel for Node
 
