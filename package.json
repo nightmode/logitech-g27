@@ -1,7 +1,7 @@
 {
   "name": "logitech-g27",
   "description": "Logitech G27 Racing Wheel for Node",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Kai Nightmode",
   "dependencies": {
     "node-hid": "2.1.1"
