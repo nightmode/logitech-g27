@@ -11,7 +11,7 @@ Bring your [Logitech G27 Racing Wheel](http://support.logitech.com/en_us/product
 
 ## Requirements
 
-[Node](https://nodejs.org/en/) version 8 or greater.
+[Node](https://nodejs.org/en/) version 10.16 or greater.
 
 ## Install
 
