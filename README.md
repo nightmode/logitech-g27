@@ -1,3 +1,5 @@
+**This library is no longer being tested or updated as I no longer have access to the hardware.** The Logitech G27 wheels were truly excellent for their time and I would like to thank my wheel for all the adventures we had together.
+
 <img src="https://raw.githubusercontent.com/nightmode/logitech-g27/main/images/header.png" width="830" alt="">
 
 # Logitech G27 Racing Wheel for Node
@@ -11,7 +13,7 @@ Bring your [Logitech G27 Racing Wheel](http://support.logitech.com/en_us/product
 
 ## Requirements
 
-[Node](https://nodejs.org/en/) version 10.16 or greater.
+[Node](https://nodejs.org/en/) version 10.16 or the Node version required by any dependency, whichever is greater.
 
 ## Install
 
