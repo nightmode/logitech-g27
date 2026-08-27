@@ -1,10 +1,8 @@
-**This library is no longer being tested or updated as I no longer have access to the hardware.** The Logitech G27 wheels were truly excellent for their time and I would like to thank my wheel for all the adventures we had together.
-
-<img src="https://raw.githubusercontent.com/nightmode/logitech-g27/main/images/header.png" width="830" alt="">
+**This software is no longer being tested or updated.**
 
 # Logitech G27 Racing Wheel for Node
 
-Bring your [Logitech G27 Racing Wheel](http://support.logitech.com/en_us/product/g27-racing-wheel) into the wonderful world of [Node](https://nodejs.org/en/).
+Bring your Logitech G27 Racing Wheel into the wonderful world of [Node](https://nodejs.org/en/).
 
 * Subscribe to wheel, pedal, and shifter events.
 * Activate simple force feedback effects.
@@ -13,19 +11,19 @@ Bring your [Logitech G27 Racing Wheel](http://support.logitech.com/en_us/product
 
 ## Requirements
 
-[Node](https://nodejs.org/en/) version 10.16 or the Node version required by any dependency, whichever is greater.
+Node version 10.16 or the Node version required by any dependency, whichever is greater.
 
 ## Install
 
-This library uses [node-hid](https://github.com/node-hid/node-hid) behind the scenes. Depending on your OS and Node version, you may have an effortless install. If not, you may want to consult node-hid's [compiling from source](https://github.com/node-hid/node-hid#compiling-from-source) guide for assistance.
+This library uses node-hid behind the scenes. Depending on your OS and Node version, you may have an effortless install. If not, you may want to consult node-hid's compiling from source guide for assistance.
 
 ```
-npm install logitech-g27
+npm install
 ```
 
-Windows users who are having trouble connecting to a wheel may need to run the [Logitech G Hub](https://www.logitechg.com/en-us/innovation/g-hub.html) software one time to setup drivers.
+Windows users who are having trouble connecting to a wheel may need to run the Logitech G Hub software one time to setup drivers.
 
-[Ubuntu](http://www.ubuntu.com/desktop) users will most likely want to remove the `sudo` requirement of interfacing with the wheel. This can be easily accomplished by creating a file at `/etc/udev/rules.d/99-hidraw-permissions.rules` with the following code. After saving the file, reboot and then you can move on to more fun tasks.
+Ubuntu users will most likely want to remove the `sudo` requirement of interfacing with the wheel. This can be easily accomplished by creating a file at `/etc/udev/rules.d/99-hidraw-permissions.rules` with the following code. After saving the file, reboot and then you can move on to more fun tasks.
 
 ```
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0664", GROUP="plugdev"
